@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <span class="playerNameColor" id="player 1+">player</span>
+        </div>
+    </header>
+    <div class="containerPlayer bordercolor">
+        <div class="playerNameContainer">
+            <div class="PlayerNameAndInput">
+                <input id="player 1" class="playerNameInput" onchange="playerName(this)">
+                <span id="errorname" class="errorName"></span>
+            </div>
+            <label for="trainer">Choose your class:</label>
+            <select class="trainerselect" id="trainer" name="trainer" onchange="showClassInfo()">
+                <option value="none">none</option>
+                <option value="pyromant">Pyromant</option>
+                <option value="electricSintice">Electric Sintice</option>
+                <option value="waterMaster">Water Master</option>
+                <option value="Botanic">Botanic</option>
+                <option value="Geolog">Geolog</option>
+                <option value="Collector">Collector</option>
+            </select>
+            <span class="trainer" id="pyromant" title="trainer">
+                <br>Pyromant</br>
+                Pyromancers love fire and its all-consuming power. Their fire monsters add +3 to their fire die roll
+            </span>
+            <span class="trainer" id="electricSintice" title="trainer">
+                <br>Electric Sintice</br>
+                Pyromancers love fire and its all-consuming power. Their fire monsters add +3 to their fire die roll
+            </span>
+            <span class="trainer" id="waterMaster" title="trainer">
+                <br>Water Master</br>
+                Pyromancers love fire and its all-consuming power. Their fire monsters add +3 to their fire die roll
+            </span>
+            <span class="trainer" id="Botanic" title="trainer">
+                <br>Botanic</br>
+                Pyromancers love fire and its all-consuming power. Their fire monsters add +3 to their fire die roll
+            </span>
+            <span class="trainer" id="Geolog" title="trainer">
+                <br>Geolog</br>
+                Pyromancers love fire and its all-consuming power. Their fire monsters add +3 to their fire die roll
+            </span>
+            <span class="trainer" id="Collector" title="trainer">
+                <br>Collector</br>
+                Pyromancers love fire and its all-consuming power. Their fire monsters add +3 to their fire die roll
+            </span>
+            <div></div>
+        </div>
+        <div class="player">
+            <p class="conteinerforstat">
+                <img src="./image/icon/strength.jpg" alt="" width="70px" height="60px">
+                <span class="statname">prestige</span>
+                <button class="button" class="statname" id="prestigeUp" onclick="plus(this)">+</button>
+                <span title="prestige" id="prestige" class="statname font">0</span>
+                <button class="button" class="statname" id="prestigeDown" onclick="minus(this)">-</button>
+            </p>
+            <p class="conteinerforstat">
+                <img src="./image/icon/wise.jpg" alt="" width="70px" height="60px">
+                <span class="statname">wise</span>
+                <button class="button" class="statname" id="wiseUp" onclick="plus(this)">+</button>
+                <span title="wise" id="wise" class="statname font">0</span>
+                <button class="button" class="statname" id="wiseDown" onclick="minus(this)">-</button>
+            </p>
+            <p class="conteinerforstat">
+                <img src="./image/icon/luck.jpg" alt="" width="70px" height="60px">
+                <span class="statname">luck</span>
+                <button class="button" class="statname" id="luckUp" onclick="plus(this)">+</button>
+                <span title="luck" id="luck" class="statname font">0</span>
+                <button class="button" class="statname" id="luckDown" onclick="minus(this)">-</button>
+            </p>
+        </div>
+    </div>
+    <div class="containerInventory bordercolor conteinerforstuf">
+        <img src="./image/icon/money.jpg" alt="" width="70px" height="60px">
+        <span class="stufname">Money</span>
+        <button class="button" class="buttonpstuf" id="MoneyDown" onclick="minus(this)">-</button>
+        <span title="strength" id="Money" class="buttonpstuf">0</span>
+        <button class="button" class="buttonpstuf" id="MoneyUp" onclick="plus(this)">+</button>
+        <div class="rollingResult bordercolor">
+            <div style=" width: 205px" class="resultDiceOrSave">
+                <button class="playerButton" id="playerButton" onclick="playerResult()">Save Your Dice Result</button>
+                <span class="playerResult" id="playerRes" >0</span>
+                <div class="mathematicButtons">
+                <button class="valuex2" id="playerResX2" style=" width: 50px" onclick="x2(this)">x2</button>
+                <button class="valuex2" id="playerResUp" style=" width: 50px" onclick="plus(this)">+</button>
+                <button class="valuex2" id="playerResDown" style=" width: 50px" onclick="minus(this)">-</button>
+                </div>
+            </div>
+            <div style=" width: 205px" class="resultDiceOrSave">
+                <button class="enemyButton" id="enemyButton" onclick="enemyResult()">Enemy Result</button>
+                <span class="enemyResult" id="enemyRes">0</span>
+                <div class="mathematicButtons">
+            <button class="valuex2" id="enemyResX2" style=" width: 50px" onclick="x2(this)">x2</button>
+            <button class="valuex2" id="enemyResUp" style=" width: 50px" onclick="plus(this)">+</button>
+            <button class="valuex2" id="enemyResDown" style=" width: 50px" onclick="minus(this)">-</button>
+
+        </div>
+            </div>
+
+            <button class="dicenameReset" id="resetValue" onclick="resetResult()">Reset</button>
+
+
+        </div>
+    </div>
+
+
+    <div class="containerDice bordercolor">
+        <button class="dicenameReset" onclick="resetDice()">Reset</button>
+        <div class="diceButtonAndResultContainer">
+            <span class="dicenameResult" id="D4">&nbsp;&nbsp;</span>
+            <button class="dicename buttonDiceRoll" id="D4+" onclick="rollDice(this)">D4</button>
+
+        </div>
+        <div class="diceButtonAndResultContainer">
+            <span class="dicenameResult" id="D6">&nbsp;&nbsp;</span>
+            <button class="dicename buttonDiceRoll" id="D6+" onclick="rollDice(this)">D6</button>
+
+        </div>
+        <div class="diceButtonAndResultContainer">
+            <span class="dicenameResult" id="D8"> &nbsp;&nbsp;</span>
+            <button class="dicename buttonDiceRoll" id="D8+" onclick="rollDice(this)">D8</button>
+
+        </div>
+        <div class="diceButtonAndResultContainer">
+            <span class="dicenameResult" id="D10">&nbsp;&nbsp;</span>
+            <button class="dicename buttonDiceRoll" id="D10+" onclick="rollDice(this)">D10</button>
+
+        </div>
+        <div class="diceButtonAndResultContainer">
+            <span class="dicenameResult" id="D12">&nbsp;&nbsp;</span>
+            <button class="dicename buttonDiceRoll" id="D12+" onclick="rollDice(this)">D12</button>
+
+        </div>
+        <div class="diceButtonAndResultContainer">
+            <span class="dicenameResult" id="D20">&nbsp;&nbsp;</span>
+            <button class="dicename buttonDiceRoll" id="D20+" onclick="rollDice(this)">D20</button>
+
+        </div>
+        <div class="diceButtonAndResultContainer">
+            <span class="dicenameResult" dicenameResult id="D100">&nbsp;&nbsp;</span>
+            <button class="dicename buttonDiceRoll" id="D100+" onclick="rollDice(this)">D100</button>
+
+        </div>
+
+    </div>
+    <div class="containerInventory bordercolor">
+
+        <li class="monfon" value="none" id="2323" title="monfon">
+            <img src="./image/monster/Lion.jpg" alt="" width="1080px" height="500px">
+        </li>
+        <li class="monfon" value="none" id="152" title="monfon">
+            <img src="./image/monster/grscoon.jpg" alt="" width="1080px" height="500px">
+        </li>
+        <li class="monfon" value="none" id="1123" title="monfon">
+            <img src="./image/monster/chuchumisumi.jpg" alt="" width="1080px" height="500px">
+        </li>
+        <li class="monfon" value="none" id="1164" title="monfon">
+            <img src="./image/monster/satori.jpg" alt="" width="1080px" height="500px">
+        </li>
+        <input class="monfonnameinput" id="inputMonfon" onchange="monfonpick()">
+        <span id="errormonfon" class="monfonError"></span>
+        <label for="monfon" class="monfonError">Enter monfon code</label>
+    </div>
+
+
+    <div class="playersStufconteiner">
+
+        <div class="headContainer">
+            <div class="headTitleAndDeleteButtonContainer">
+                <span class="headTitle">
+                    HEAD
+                </span>
+                <button onclick="deleteHead()" class="deleteButton">
+                    Delete
+                </button>
+
+            </div>
+            <input class="stuffHeradInput" id="inputStuffHead" onchange="stuffHeadInput()">
+            <span id="errorstufhead" class="stufHeadError"></span>
+            <li class="headDeafault" id="deafaultHead" title="stuffHead">
+                <img src="./image/stuff/head/head.jpg" width="350px" height="200px" alt="">
+                <p class="headtextcontainer">
+                    <span class="headtext" style="margin-top: 50px;"> Not wearing anything yet </span>
+                </p>
+            </li>
+
+
+            <li class="headStuffContainer" id="001" title="stuffHead">
+                <img src="./image/stuff/head/baseball-cap.jpg" width="350px" height="200px" alt="">
+                <p class="headtextcontainer">
+                    <span class="headtext"> +1 to all ROll dices </span>
+                </p>
+            </li>
+            <li class="headStuffContainer" id="head1" title="stuffHead">
+                <img src="./image/stuff/head/.jpg" alt="">
+                <span class="headtext"></span>
+            </li>
+            <li class="headStuffContainer" id="head1" title="stuffHead">
+                <img src="./image/stuff/head/.jpg" alt="">
+                <span class="headtext"></span>
+            </li>
+        </div>
+
+        <div class="bodyContainer">
+            <div class="bodyitleAndDeleteButtonContainer">
+                <span class="bodyTitle">
+                    Body
+                </span>
+                <button onclick="deletebody()" class="deleteButton">
+                    Delete
+                </button>
+
+            </div>
+            <input class="stuffBodyInput" id="inputStuffBody" onchange="stuffBodyInput()">
+            <span id="errorstufBody" class="stufBodyError"></span>
+            <li class="bodyDeafault" id="deafaultBody" title="stuffBody">
+                <img src="./image/stuff/body/DefaultBody.jpg" width="350px" height="200px" alt="">
+                <p class="headtextcontainer">
+                    <span class="headtext" style="margin-top: 50px;"> Not wearing anything yet </span>
+                </p>
+            </li>
+            <li class="bodyStuffContainer" id="021" title="stuffBody">
+                <img src="./image/stuff/body/jacket.jpg" width="350px" height="200px" alt="">
+                <p class="headtextcontainer">
+                    <span class="headtext"> +1 to all ROll dices </span>
+                </p>
+            </li>
+            <li class="bodyStuffContainer" id="023" title="stuffBody">
+                <img src="./image/stuff/head/.jpg" alt="">
+                <span class="headtext"></span>
+            </li>
+            <li class="bodyStuffContainer" id="026" title="stuffBody">
+                <img src="./image/stuff/head/.jpg" alt="">
+                <span class="headtext"></span>
+            </li>
+        </div>
+    </div>
+</body>
+
+</html>

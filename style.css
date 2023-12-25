@@ -1,0 +1,379 @@
+@font-face {
+    font-family: Kobalt Kartoon Regular;
+    src: url(./style/Kobalt\ Kartoon\ Regular.otf) format("opentype");
+    }
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+  }
+
+  body {
+    /* The image used */
+    background-color: lightgrey;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.playerNameColor{
+    color: yellow;
+    font-size: 45px;
+    text-transform: uppercase;
+}
+.playerNameInput{
+    height: 30px;
+    margin-right: 1rem;
+    width: 300px;
+    font-size: 30px;
+    
+}
+.PlayerNameAndInput{
+    display: grid;
+}
+.trainerselect{
+font-size: 30px;
+width: 320px;
+}
+
+.button {
+    width: 3rem;
+    height: 3rem;
+    background-color: greenyellow;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+.conteinerforstat {
+    display: grid;
+    margin-left: 3rem;
+    justify-items: center;
+}
+.player {
+display: flex;
+border-right: 1mm ridge rgba(17, 14, 19, 0.6);
+border-left: 1mm ridge rgba(17, 14, 19, 0.6);
+width: 680px;
+
+}
+.statname{
+text-transform: uppercase;
+text-size-adjust: 5rem;
+font-size: 50px;
+}
+
+.containerPlayer{
+    display: flex;
+    border-bottom: 2mm ridge rgba(17, 14, 19, 0.6);
+    width: 1300px;
+
+}
+.prestige {
+    background-color: lightcoral;
+}
+.containerInventory{
+    display: grid;
+    border-bottom: 2mm ridge rgba(17, 14, 19, 0.6);
+    width: 1300px;
+}
+
+.playerNameContainer{
+display: grid;
+display: flex;
+flex-flow: column;
+width: 400px;
+height: 400px;
+margin-left: 10px;
+}
+.errorName{
+   display: none; 
+}
+.preview{
+    width: 30rem;
+}
+.conteinerforstuf{
+    display: flex;
+    place-items: flex-end; 
+}
+.dicename{
+    text-transform: uppercase;
+
+}
+.dicenameResult{
+    width: 50px;
+    margin-right: 20px;
+    margin-left: 20px;
+    text-transform: uppercase;
+    font-size: 70px;
+    font-family: Kobalt Kartoon Regular;
+}
+
+  
+.stufname{
+    text-transform: uppercase;
+    font-size: 4rem;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: center;
+}
+.buttonpstuf{
+    text-transform: uppercase;
+    font-size: 4rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    text-align: center; 
+    font-family: Kobalt Kartoon Regular;
+}
+.font{
+    font-family: Kobalt Kartoon Regular;
+    font-size: 70px;
+}
+.rollingResult{
+    display: flex;
+    border-left: 1mm ridge rgba(17, 14, 19, 0.6);
+    margin-left: 50px;
+    height: 80px;
+    width: 475px;
+    border-right: 1mm ridge rgba(17, 14, 19, 0.6);
+}
+.containerDice{
+    display: flex;
+    border-bottom: 2mm ridge rgba(3, 3, 3, 0.6);
+    border-right: 1mm ridge rgba(17, 14, 19, 0.6);
+    height: 150px;
+    width: 1300px;
+    margin-top: 20px;
+    padding-bottom: 20px
+}
+.buttonDiceRoll{
+    padding: 10px 20px;
+    background-color: black;
+    color: yellow;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    transition: transform 2s ease-in-out; /* Увеличиваем время анимации и добавляем замедление */
+    height: 200px;
+  }
+
+  .buttonDiceRoll:active {
+    transform: rotate(1440deg); /* Поворот на 360 градусов при нажатии */
+    transition: transform 0s; /* Устанавливаем длительность анимации 0, чтобы завершить мгновенно */
+  }
+.dicenameReset{
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    height: 75px;
+    background-color: lightcoral;
+    color: aliceblue;
+}
+.diceButtonAndResultContainer{
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    margin-right: 35px;
+    margin-left: 20px;
+}
+.trainer{
+    font-size: 35px;
+    display: none;
+    font-weight: 900;
+}
+.header{
+    height: 50px;
+    background-color: black;
+    width: 1300px;
+    display: flex;
+    justify-content: center;
+}
+.monfon{
+    display: none;
+    margin-left: 20px;
+}
+.monfonnameinput{
+    height: 30px;
+    margin-right: 1rem;
+    width: 300px;
+    font-size: 30px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.monfonError{
+    margin-left: 20px;
+    font-size: 20px;
+    margin-top: 5px;
+}
+.headStuffContainer{
+    display: flex;
+    margin-top: 30px;
+    display: none;
+}
+.headtext{
+    font-size: 40px;
+    margin-top: 50px;
+
+}
+.headtextcontainer{
+    margin-left: 40px;
+    width: 700px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+}
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Применение анимации к элементу с атрибутом [title="monfon"] */
+  [title="monfon"] {
+    animation: fadeIn 1s ease-in-out; /* Продолжительность анимации 0.5 секунды */
+    display: none;
+  }
+   
+   
+  /* Опционально: можно добавить transition для плавного изменения стиля display */
+  [title="monfon"] {
+    transition: display 1s ease-in-out;
+  }
+  [title="stuffHead"] {
+    animation: fadeIn 1s ease-in-out; /* Продолжительность анимации 0.5 секунды */
+    display: none;
+  }
+   
+   
+  /* Опционально: можно добавить transition для плавного изменения стиля display */
+  [title="stuffHead"] {
+    transition: display 1s ease-in-out;
+  }
+
+  [title="stuffBody"] {
+    animation: fadeIn 1s ease-in-out; /* Продолжительность анимации 0.5 секунды */
+    display: none;
+  }
+   
+   
+  /* Опционально: можно добавить transition для плавного изменения стиля display */
+  [title="stuffBody"] {
+    transition: display 1s ease-in-out;
+  }
+
+  .stuffHeradInput{
+    height: 30px;
+    margin-right: 1rem;
+    width: 300px;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+  }
+  .headDeafault{
+    display: flex;
+  }
+  .headTitle{
+    text-transform: uppercase;
+    font-size: 45px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-left: 15px;
+  }
+  .headContainer{
+    border-bottom: 2mm ridge rgba(3, 3, 3, 0.6);
+    display: grid;
+    margin-left: 10px;
+}
+  .headTitleAndDeleteButtonContainer{
+    display: flex;
+  }
+
+  .deleteButton{
+    text-transform: uppercase;
+    margin-top: 17px;
+    margin-left: 10px;
+    height: 50px;
+    width: 100px;
+    background-color: lightcoral;
+    color: aliceblue;
+  }
+  .stufHeadError{
+    font-size: 30px;
+    margin-top: 5px;
+    color: red;
+    margin-bottom: 15px;
+  }
+  .bodyContainer{
+    border-bottom: 2mm ridge rgba(3, 3, 3, 0.6);
+    display: grid;
+    margin-left: 10px;
+  }
+  .bodyTitle{
+    text-transform: uppercase;
+    font-size: 45px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-left: 15px;
+  }
+  .bodyDeafault{
+    display: flex;
+  }
+  .stuffBodyInput{
+    height: 30px;
+    margin-right: 1rem;
+    width: 300px;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .bodyitleAndDeleteButtonContainer{
+    display: flex;
+  }
+  .stufBodyError{
+    font-size: 30px;
+    margin-top: 5px;
+    color: red;
+    margin-bottom: 15px;
+  }
+  .bodyStuffContainer{
+    display: flex;
+    margin-top: 30px;
+    display: none;
+  }
+  .bodyDeafault{
+    display: flex;
+  }
+  .mathematicButtons{
+    display: grid;
+  }
+  .resultDiceOrSave{
+    display: flex;
+  }
+  .playerButton{
+    font-size: 25px;
+    background: lightgreen;
+    width: 145px;
+  }
+  .enemyButton{
+    font-size: 25px;
+    background: red;
+    width: 145px;
+  }
+  .playerResult{
+    display: none;
+    font-size: 75px;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  .enemyResult{
+    display: none;
+    font-size: 75px;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
